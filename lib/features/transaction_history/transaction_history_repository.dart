@@ -8,9 +8,6 @@ class TransactionHistoryRepository {
     final firestoreInstance = FirebaseFirestore.instance;
     final firebaseAuthInstance = FirebaseAuth.instance;
 
-    print(
-        'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS');
-
     try {
       //saving the user transaction info in the Firestore database
 
@@ -25,8 +22,6 @@ class TransactionHistoryRepository {
                 UserTransaction.fromSnapshot(transaction.data()))
             .toList();
       });
-      print(
-          'ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd');
 
       return userTransactions;
     } catch (e) {

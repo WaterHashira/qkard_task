@@ -15,7 +15,7 @@ UserTransaction _$UserTransactionFromJson(Map<String, dynamic> json) =>
       json['address_street'] as String?,
       json['address_zip_code'] as String?,
       json['address_country'] as String?,
-      json['addressS_state'] as String?,
+      json['address_state'] as String?,
       json['address_phone_number'] as String?,
     );
 
@@ -28,6 +28,6 @@ Map<String, dynamic> _$UserTransactionToJson(UserTransaction instance) =>
       'address_street': instance.addressStreet,
       'address_zip_code': instance.addressZipCode,
       'address_country': instance.addressCountry,
-      'addressS_state': instance.addressState,
+      'address_state': instance.addressState,
       'address_phone_number': instance.addressPhoneNumber,
     };

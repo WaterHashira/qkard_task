@@ -27,8 +27,11 @@ class ManagePaymentsScreen extends StatelessWidget {
                 : Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      RecurringPaymentCard(
-                          scheduledTransaction: userTransactionsList[index]),
+                      SizedBox(
+                        height: 360,
+                        child: RecurringPaymentCard(
+                            scheduledTransaction: userTransactionsList[index]),
+                      ),
                       const SizedBox(
                         height: 15,
                       )

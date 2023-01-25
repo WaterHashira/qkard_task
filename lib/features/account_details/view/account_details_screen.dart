@@ -30,7 +30,7 @@ class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
       bottomNavigationBar: const CustomBottomNavigationBar(),
       body: Padding(
         padding: const EdgeInsets.all(15),
-        child: Container(
+        child: SizedBox(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,

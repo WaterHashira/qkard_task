@@ -63,13 +63,6 @@ class RecurringPaymentCard extends StatelessWidget {
                     height: 15,
                   ),
                   moreDetailsCardBuilder(
-                      'Scheduled Date',
-                      scheduledTransaction['schedule_date'].toString(),
-                      context),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  moreDetailsCardBuilder(
                       'Term', scheduledTransaction['term'], context),
                   const SizedBox(
                     height: 10,

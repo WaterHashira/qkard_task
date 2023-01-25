@@ -7,9 +7,6 @@ class PaymentRepository {
     final firestoreInstance = FirebaseFirestore.instance;
     final firebaseAuthInstance = FirebaseAuth.instance;
 
-    print(
-        'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS');
-
     try {
       //saving the user transaction info in the Firestore database
 
@@ -28,8 +25,6 @@ class PaymentRepository {
         'address_state': transaction.addressState,
         'address_phone_number': transaction.addressPhoneNumber
       });
-      print(
-          'ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd');
     } catch (e) {
       throw Exception(e);
     }

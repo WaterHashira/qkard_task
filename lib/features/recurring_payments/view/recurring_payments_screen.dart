@@ -61,7 +61,11 @@ class _RecurringPaymentsScreenState extends State<RecurringPaymentsScreen> {
             } else if (state is RecurringPaymentScheduleFailure) {
               showSuccessSnackBar('Scheduling Failed! Please try again');
             } else if (state is GetRecurringPaymentSuccess) {
-              Navigator.pushNamed(context, ManagePaymentsScreen.id);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ManagePaymentsScreen(
+                          userTransactionsList: state.userTransactions)));
             } else if (state is GetRecurringPaymentFailure) {
               showSuccessSnackBar('Scheduling Failed! Please try again');
             }
@@ -270,7 +274,6 @@ class _RecurringPaymentsScreenState extends State<RecurringPaymentsScreen> {
                                     child: TextButton(
                                       child: const Text('Schedule'),
                                       onPressed: () async {
-                                        //TODO save into cache memory
                                         ValueHolder.scheduledTransactionId += 1;
                                         scheduledTransaction['id'] =
                                             ValueHolder.scheduledTransactionId;
@@ -292,7 +295,6 @@ class _RecurringPaymentsScreenState extends State<RecurringPaymentsScreen> {
                                           );
                                         }
 
-                                        //TODO: and schedule its notofication as well
                                         await NotificationService()
                                             .addNotification(
                                                 id: ValueHolder
@@ -387,16 +389,9 @@ class _RecurringPaymentsScreenState extends State<RecurringPaymentsScreen> {
           }
         ],
         note: "Contact us for any questions on your order.",
-        onSuccess: (Map params) async {
-          //TODO: save transactions in database according to the response, success or faliure
-          print('$params');
-        },
-        onError: (error) {
-          print("onError: $error");
-        },
-        onCancel: (params) {
-          print('cancelled: $params');
-        });
+        onSuccess: (Map params) async {},
+        onError: (error) {},
+        onCancel: (params) {});
   }
 
   Future<void> _selectDate(BuildContext context) async {

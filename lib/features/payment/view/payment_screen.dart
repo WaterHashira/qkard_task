@@ -264,15 +264,8 @@ class PaymentScreen extends StatelessWidget {
           }
         ],
         note: "Contact us for any questions on your order.",
-        onSuccess: (Map params) async {
-          //TODO: save transactions in database according to the response, success or faliure
-          print('$params');
-        },
-        onError: (error) {
-          print("onError: $error");
-        },
-        onCancel: (params) {
-          print('cancelled: $params');
-        });
+        onSuccess: (Map params) async {},
+        onError: (error) {},
+        onCancel: (params) {});
   }
 }

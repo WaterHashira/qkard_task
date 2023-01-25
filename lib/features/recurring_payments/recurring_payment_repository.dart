@@ -8,9 +8,6 @@ class RecurringPaymentRepository {
   final firebaseAuthInstance = FirebaseAuth.instance;
 
   Future<void> saveTransaction({required UserTransaction transaction}) async {
-    print(
-        'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS');
-
     try {
       //saving the user transaction info in the Firestore database
 
@@ -29,8 +26,6 @@ class RecurringPaymentRepository {
         'address_state': transaction.addressState,
         'address_phone_number': transaction.addressPhoneNumber
       });
-      print(
-          'ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd');
     } catch (e) {
       throw Exception(e);
     }
@@ -39,11 +34,6 @@ class RecurringPaymentRepository {
 //schedule
   Future<void> scheduleTransaction(
       {required Map<String, dynamic> scheduledTransaction}) async {
-    print(
-        'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS');
-    print(scheduledTransaction);
-    print(scheduledTransaction['transaction'].totalAmount);
-
     try {
       //saving the user transaction info in the Firestore database
 
@@ -66,19 +56,13 @@ class RecurringPaymentRepository {
         'address_phone_number':
             scheduledTransaction['transaction'].addressPhoneNumber,
       });
-      print(
-          'ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd');
     } catch (e) {
-      print(e.toString());
       throw Exception(e);
     }
   }
 
 //get all scheduled transactions
   Future<List<Map<String, dynamic>>> getScheduledTransactions() async {
-    print(
-        'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS');
-
     try {
       //saving the user transaction info in the Firestore database
 
@@ -89,8 +73,8 @@ class RecurringPaymentRepository {
           .collection('user_scheduled_transactions')
           .get()
           .then((transactionsQuery) {
-        Map<String, dynamic> userTransaction = {};
-        transactionsQuery.docs.forEach((doc) {
+        for (var doc in transactionsQuery.docs) {
+          Map<String, dynamic> userTransaction = {};
           UserTransaction transaction =
               UserTransaction.fromSnapshot(doc.data());
           userTransaction['id'] = doc.data()['id'];
@@ -99,14 +83,11 @@ class RecurringPaymentRepository {
           userTransaction['transaction'] = transaction;
 
           userTransactions.add(userTransaction);
-        });
+        }
       });
-      print(
-          'ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd');
 
       return userTransactions;
     } catch (e) {
-      print('---------------------------------->' + e.toString());
       throw Exception(e);
     }
   }
@@ -122,7 +103,6 @@ class RecurringPaymentRepository {
         .then((snapshot) async {
       for (DocumentSnapshot ds in snapshot.docs) {
         await ds.reference.delete();
-        print(ds.reference);
       }
     });
 

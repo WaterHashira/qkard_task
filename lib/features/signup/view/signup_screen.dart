@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qkard_task/widgets/input_field.dart';
 import 'package:qkard_task/widgets/loading_overlay.dart';
 
+// ignore: must_be_immutable
 class SignUpScreen extends StatelessWidget {
   static const id = 'SignUpScreen';
 

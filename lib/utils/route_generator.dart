@@ -9,7 +9,7 @@ import 'package:qkard_task/features/transaction_history/view/transaction_history
 import 'package:qkard_task/utils/logger.dart';
 
 class RouteGenerator {
-  static const initialRoute = PaymentScreen.id;
+  static const initialRoute = LoginScreen.id;
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments as dynamic;

@@ -25,7 +25,7 @@ class UserTransaction {
   @JsonKey(name: 'address_country')
   String? addressCountry;
 
-  @JsonKey(name: 'addressS_state')
+  @JsonKey(name: 'address_state')
   String? addressState;
 
   @JsonKey(name: 'address_phone_number')

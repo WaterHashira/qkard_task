@@ -36,7 +36,7 @@ class TransactionHistoryScreen extends StatelessWidget {
             return LoadingOverlay(
               isLoading: state is TransactionHistoryLoading,
               child: Scaffold(
-                bottomNavigationBar: CustomBottomNavigationBar(),
+                bottomNavigationBar: const CustomBottomNavigationBar(),
                 appBar: AppBar(
                   title: const Text('Transaction History'),
                 ),
@@ -53,7 +53,6 @@ class TransactionHistoryScreen extends StatelessWidget {
                             return Column(
                               children: <Widget>[
                                 SizedBox(
-                                  //TODO: make the list dynamically adjust whenever this widget expands
                                   height: 300,
                                   child: TransactionCard(
                                       transaction: transactionsList[index]),
