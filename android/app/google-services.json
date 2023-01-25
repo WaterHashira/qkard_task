@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1069358373219",
+    "project_id": "qkard-task",
+    "storage_bucket": "qkard-task.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069358373219:android:81f35fb47ddd32f720db56",
+        "android_client_info": {
+          "package_name": "com.example.qkard_task"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069358373219-5h178aphf7mo2sb76pe5sgihbrtteuka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQfKftKZG4B4KfI-9ka9KdAXgshGkXin4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069358373219-5h178aphf7mo2sb76pe5sgihbrtteuka.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1069358373219-s08jlen0bl2c979ot1rmc1is8d1j5bpf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.qkardTask"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
